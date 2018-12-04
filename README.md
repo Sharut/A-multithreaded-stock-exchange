@@ -49,14 +49,16 @@ The responsibility of the Exchange thread is to read the order from the queue
 and attempt to execute it if it has not expired. It maintains two lists of orders,
 one for all the buy orders and one for all the sell orders. A new sell order should
 be matched with one of the buy orders (both should be un-expired) and vice
-versa. The thread attempts to maximize its profit – so it picks the order(s) that
-maximizes the the number of stocks transacted times the spread.
+versa. The thread attempts to maximize its profit 
+– so it picks the order(s) that maximizes the the number of stocks transacted times the spread.
 Note that maximising this objective function, number of stocks multiplied by
 the spread, is a computationally hard problem. So, you may use the following
 algorithm which gives an approximate solution that is easy to compute:
 
 • Suppose n units of a stock X are being offered at price s.
+
 • Set r = n (r denotes the number of remaining units).
+
 • While r > 0 and there are unexpired buy requests for X left
 
 – Pick the buy order b that is asking for at most r units X such that
@@ -69,13 +71,15 @@ possibly be completely fulfilled but we will ignore this problem and treat a sel
 order that is not able to allocate all its units using this algorithm as a partially
 fulfilled order (and hence clear it only if we are allowed to satisfy it partially).
 If an incoming order is fully satisfied, it is not added to any list. An order (or
-more) from the list may get fully satisfied by an incoming order – the exchange
-thread does not remove it from the list, but relies in the clean-up thread to
+more) from the list may get fully satisfied by an incoming order.
+
+– the exchange thread does not remove it from the list, but relies in the clean-up thread to
 clean it up. The exchange is also greedy, and after any search through its list
 of pending order, if an order (or more) can be satisfied at this instant, it will
 execute it rather than wait hoping for a more profitable order to show up later.
 The clean-up thread simply removes any expired or satisfied orders from the
 two lists kept by the exchange thread.
+
 The threads produce outputs in files called, respectively, order.out, exchange.out
 and cleanup.out (all in the same directory). They simply log their
 activities. The formats for the three files are as follows. Order thread simply
@@ -114,10 +118,14 @@ and the cleanup thread has cleaned up both Buy and Sell lists.
 The tar-ball of supporting files, “assignment1.tar.gz”, contains four java files:
 • checker.java: This is the main checker file. It will call the stub functions
 that you write. DO NOT make any modifications to this file.
+
 • Stock.java: This file should contain the implementation of I/O. You can
 add extra methods to this file.
+
 • Exchange.java: This file should focus on order matching.
+
 • Test.java: This file should contain the implementation of Threads.
+
 The tar-ball “assignment1.tar.gz” also contains four sample inputs that you
 can use to test your code on.
 
