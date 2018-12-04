@@ -18,6 +18,7 @@ earns Rs. p − q.
 The requests are given to you in an input file. The log of transactions is
 your output. The file formats are specified below (%x is the format, the string
 in parenthesis is a pointer to its explanation for it).
+
 %d(T0) %s(Name) %d(Texp) %s (Type) %d(Qty) %s(Stock) %d(Price)
 %b(Partial)
 
@@ -50,6 +51,7 @@ and attempt to execute it if it has not expired. It maintains two lists of order
 one for all the buy orders and one for all the sell orders. A new sell order should
 be matched with one of the buy orders (both should be un-expired) and vice
 versa. The thread attempts to maximize its profit 
+
 – so it picks the order(s) that maximizes the the number of stocks transacted times the spread.
 Note that maximising this objective function, number of stocks multiplied by
 the spread, is a computationally hard problem. So, you may use the following
@@ -116,6 +118,7 @@ initiated.
 The simulation ends when the Order thread has no more entries in its file
 and the cleanup thread has cleaned up both Buy and Sell lists.
 The tar-ball of supporting files, “assignment1.tar.gz”, contains four java files:
+
 • checker.java: This is the main checker file. It will call the stub functions
 that you write. DO NOT make any modifications to this file.
 
