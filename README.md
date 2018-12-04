@@ -1,10 +1,4 @@
 # A-multithreaded-stock-exchange
-
-The main goal of this assignment is that we get comfortable with JAVA.
-You will get a chance to use class hierarchy, File I/O, Exception handling,
-Thread programming, Inter-thread synchronization etc. Please read the entire
-assignment carefully, many times over.
-
 In this assignment we will create a innovative “no-cost” stock exchange,
 which receives buy and sell orders and pockets a profit while matching them.
 The main idea is to receive time-bound requests, which are matched with other
