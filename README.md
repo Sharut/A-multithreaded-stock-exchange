@@ -1,5 +1,5 @@
 # A-multithreaded-stock-exchange
-Implemented a mini stock exchange
+# Implemented a mini stock exchange
 
 In this assignment we will create a innovative “no-cost” stock exchange,
 which receives buy and sell orders and pockets a profit while matching them.
